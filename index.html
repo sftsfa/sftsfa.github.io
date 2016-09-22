@@ -1,0 +1,481 @@
+﻿<!DOCTYPE html>
+<html>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+#pic{        /*logo*/
+width: 140px;
+height: 140px;
+position: absolute;
+top: 0px;
+left: 0px;
+border: 2px solid #d3d3d3;
+background: #f7f7f7;
+cursor: pointer;
+
+}
+
+
+#navbar{  /*navigation bar*/
+ left: 144.3px;
+ top: 0px;
+ height: 90px;
+ width: 100%;
+ position: absolute;
+ border: 2px solid #d3d3d3;
+}
+
+#navop1{  /*option: dashboard*/
+width: 120px;
+height: 90px;
+left: 144.3px;
+top: 3px;
+position: absolute;
+background: "";
+cursor: pointer;
+}
+
+#navop2{  /*option: A-kun words collection*/
+width: 120px;
+height: 90px;
+left: 264.3px;
+top: 3px;
+position: absolute;
+background: "";
+cursor: pointer;
+}
+
+#navop3{  /*Member List*/
+width: 120px;
+height: 90px;
+left: 384.3px;
+top: 2px;
+position: absolute;
+background: "";
+cursor: pointer;
+}
+
+#navop4{  /*in coorpration with*/
+width: 120px;
+height: 90px;
+left: 504.3px;
+top: 2px;
+position: absolute;
+background: "";
+cursor: pointer;
+}
+
+#db{ /*dashboard*/
+width: 2px;
+height: 48.9px;
+background: #d3d3d3;
+top: 94.7px;
+left: 144.3px;
+position: absolute;
+}
+
+#buton1{  /*dashborad: play a game*/
+top: 14px;
+left: 7px;
+position: relative;
+display: none;
+
+}
+#buton2{
+top: 14px;
+left: 7px;
+position: relative;
+display: none;
+
+}
+
+#buton3{
+display: none;
+
+}
+
+#buton4{
+display: none;
+}
+
+#dishu{
+width: 75px;
+height: 75px;
+position: absolute;
+background: gold;
+display: none;
+
+}
+
+#container {
+  width: 450px;
+  height: 450px;
+  position: absolute;
+top: 90px;
+left: 90px;
+  background: silver;
+border: 10px solid #f3f3f3;
+}
+
+#confirmop{
+width: 120px;
+height: 90px;
+top: 90px;
+left: 560px;
+position: absolute;
+background: #f3f3f3;
+display: block;
+
+}
+
+#gameoptions{
+ position: absolute;
+ top: 54px;
+ left: 90px;
+}
+
+#howtoplay{
+position: absolute;
+top: 20px;
+left: 90px;
+}
+
+#warning1{
+position: absolute;
+top: 570px;
+left: 90px;
+}
+
+#maincontent{
+width: 100%;
+height: 100%;
+top: 147px;
+left: 0px;
+position: absolute;
+}
+
+
+.dropbtn {
+    background-color: transparent;
+    color: black;
+    width: 120px;
+    height: 90px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content div {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #d3d3d3;
+}
+
+
+</style>
+
+<title>AAA Association</title>
+<body>
+
+<img src= "https://raw.githubusercontent.com/kuroyukiasuna/AAA-Association/master/pic/AAAlogo2.png" alt = "AAA logo" id = "pic" onclick="toMaincontent()">
+</img>
+
+
+<canvas id="navbar">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<div id= "navop1" onmouseover="mOver(this)" onmouseout="mOut(this)"  onclick = "calldashboard()"><div style="text-align: center;"></br></br>dashboard</div></div>
+
+<div id= "navop2" onmouseover="mOver(this)" onmouseout="mOut(this)"  onclick = "loadYulu()"><div style="text-align: center;"></br></br>A君语录</div></div>
+
+
+<!---<div id= "navop4" onmouseover="mOver(this)" onmouseout="mOut(this)" ><div style="text-align: center;"></br></br>合作单位</div></div>--->
+
+<div id="db">
+<button id="buton1" onclick="loadgame()">play a game</button>
+<button id="buton2" onclick="loadHaha()">News-press</button>
+</div>
+
+<div id="maincontent">&nbsp
+</div>
+
+<div id="navop3" class="dropdown">
+  <div class="dropbtn"><div style="text-align: center;"></br></br>成员列表</div></div>
+
+  <div class="dropdown-content">
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" >A君</div>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadpinggeintro()">平哥</div>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" >嘉明</div>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" >哲凯</div>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" >党某</div>
+	<div onmouseover="mOver(this)" onmouseout="mOut(this)" >Stephen</div>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" >饺子</div>
+
+  </div>
+</div>
+
+<div id="navop4" class="dropdown">
+  <div class="dropbtn"><div style="text-align: center;"></br></br>合作单位</div></div>
+
+  <div class="dropdown-content">
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)"onclick="loadbaixueintro()" >白学研究会</div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<script>
+var nevigationbar = document.getElementById("navbar");
+var ctx = nevigationbar.getContext("2d");
+// Create gradient
+var grd = ctx.createLinearGradient(0,0,0,200);
+grd.addColorStop(0,"#d3d3d3");
+grd.addColorStop(1,"white");
+// Fill with gradient
+ctx.fillStyle = grd;
+ctx.fillRect(0,0,99999,150);
+
+function myFunction(){
+ alert("you clicked on it!");
+};
+
+function toMaincontent(){
+var yulutxt = document.getElementById("maincontent");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      yulutxt.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://raw.githubusercontent.com/kuroyukiasuna/AAA-Association/master/texts/AAAintro.txt", true);
+  xhttp.send();
+};
+toMaincontent();
+window.onbeforeunload = function () {
+  window.scrollTo(0,0);
+};
+
+function getdashboard(obj){
+var d1  = document.getElementById("buton1");
+var d2  = document.getElementById("buton2");
+ var id = setInterval(frame, 5);
+ var pos = 0;
+  function frame() {
+    if (pos === 700) {
+      d1.style.display = "inline";
+      d2.style.display = "inline";
+      clearInterval(id);
+      
+    } else {
+      pos += 100; 
+      obj.style.width = pos+'px';
+    }
+}
+};
+
+function hidedashboard(obj){
+var d1  = document.getElementById("buton1");
+var d2  = document.getElementById("buton2");
+ var id = setInterval(frame, 5);
+  var pos = 700;
+  function frame() {
+    if (pos === 0) {
+      obj.style.width = 2+'px';
+      d1.style.display = "none";
+ d2.style.display = "none";
+       clearInterval(id);
+    } else {
+      pos -= 100; 
+      obj.style.width = pos+'px';
+    }
+}
+};
+
+function calldashboard(){
+var d  = document.getElementById("db");
+if(d.style.width < "700px"){
+getdashboard(d);
+
+}else{
+hidedashboard(d);
+}
+};
+
+function tiankeng(){
+alert("平哥填坑");
+
+};
+
+
+function loadYulu() {
+  var yulutxt = document.getElementById("maincontent");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      yulutxt.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://raw.githubusercontent.com/kuroyukiasuna/AAA-Association/master/texts/a-kun%20yulu.txt", true);
+  xhttp.send();
+};
+
+function loadHaha() {
+  var yulutxt = document.getElementById("maincontent");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      yulutxt.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://raw.githubusercontent.com/kuroyukiasuna/AAA-Association/master/texts/hahaha.txt", true);
+  xhttp.send();
+};
+
+function loadpinggeintro() {
+  var yulutxt = document.getElementById("maincontent");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      yulutxt.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://raw.githubusercontent.com/kuroyukiasuna/AAA-Association/master/texts/pinggeintro.txt", true);
+  xhttp.send();
+};
+
+function loadbaixueintro() {
+  var yulutxt = document.getElementById("maincontent");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      yulutxt.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://raw.githubusercontent.com/kuroyukiasuna/AAA-Association/master/texts/whiteologyintro.txt", true);
+  xhttp.send();
+};
+
+function clearmaincontent(){
+ var maintxt = document.getElementById("maincontent");
+maintxt.innerHTML = "";
+var d  = document.getElementById("db");
+if(d.style.width > "3px"){
+ hidedashboard(d);
+}
+};
+
+function mOver(obj){
+obj.style.background = "#d3d3d3";
+};
+
+function mOut(obj){
+obj.style.background = "";
+};
+
+var score = 0;
+var highscore = 0;
+
+function scoreplus(){
+ score = score + 1;
+ var para = document.getElementById("count");
+ para.innerHTML = score;
+};
+
+function loadgame(){
+ var yulutxt = document.getElementById("maincontent");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      yulutxt.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://raw.githubusercontent.com/kuroyukiasuna/AAA-Association/master/texts/gamecontent.txt", true);
+  xhttp.send();
+};
+
+function game(){
+var para = document.getElementById("count");
+var confirmop = document.getElementById("confirmop");
+var para2 = document.getElementById("highcount");
+var gamebutton = document.getElementById("callgame");
+var dishu = document.getElementById("dishu");
+confirmop.style.display = "none";
+dishu.style.display = "block";
+para2.innerHTML = highscore;
+
+var dtop = 0;
+var dleft = 0;
+var timer = 0;
+score = 0;
+  var id = setInterval(frame, 900);
+  function frame() {
+    if (timer == 10) {
+dishu.style.display = "none";
+confirmop.style.display = "block";
+ if(score > highscore){
+ highscore = score;
+para2.innerHTML = highscore+ "&nbsp new highscore!";
+}else{
+para2.innerHTML = highscore+ "&nbsp play again?";
+}
+
+     gamebutton.innerHTML = "</br>play again";
+ para.innerHTML = score;
+      clearInterval(id);
+    } else {
+      timer++; 
+      dtop = Math.floor((Math.random() * 375));
+      dleft = Math.floor((Math.random() * 375));
+      dishu.style.top = dtop + 'px'; 
+      dishu.style.left = dleft + 'px'; 
+    }
+  }
+
+};
+
+function cleargame(){
+ var maintxt = document.getElementById("maincontent");
+maintxt.innerHTML = "&nbsp";
+score = 0;
+};
+
+function gethighscore(){
+var para2 = document.getElementById("highcount");
+para2.innerHTML = highscore;
+};
+
+
+
+</script>
+
+</body>
+
+</html>
