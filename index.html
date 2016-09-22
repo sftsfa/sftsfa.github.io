@@ -34,7 +34,7 @@ background: "";
 cursor: pointer;
 }
 
-#navop2{  /*option: A-kun words collection*/
+#navop2{  /*option: DAF*/
 width: 120px;
 height: 90px;
 left: 264.3px;
@@ -196,10 +196,10 @@ position: absolute;
 
 </style>
 
-<title>AAA Association</title>
+<title>SFTSFA</title>
 <body>
 
-<img src= "https://raw.githubusercontent.com/kuroyukiasuna/AAA-Association/master/pic/AAAlogo2.png" alt = "AAA logo" id = "pic" onclick="toMaincontent()">
+<img src= # alt = "AAA logo" id = "pic" onclick="toMaincontent()">
 </img>
 
 
@@ -208,10 +208,9 @@ Your browser does not support the HTML5 canvas tag.</canvas>
 
 <div id= "navop1" onmouseover="mOver(this)" onmouseout="mOut(this)"  onclick = "calldashboard()"><div style="text-align: center;"></br></br>dashboard</div></div>
 
-<div id= "navop2" onmouseover="mOver(this)" onmouseout="mOut(this)"  onclick = "loadYulu()"><div style="text-align: center;"></br></br>A君语录</div></div>
+<div id= "navop2" onmouseover="mOver(this)" onmouseout="mOut(this)"  onclick = "loadYulu()"><div style="text-align: center;"></br></br>DAF</div></div>
 
 
-<!---<div id= "navop4" onmouseover="mOver(this)" onmouseout="mOut(this)" ><div style="text-align: center;"></br></br>合作单位</div></div>--->
 
 <div id="db">
 <button id="buton1" onclick="loadgame()">play a game</button>
@@ -225,13 +224,13 @@ Your browser does not support the HTML5 canvas tag.</canvas>
   <div class="dropbtn"><div style="text-align: center;"></br></br>成员列表</div></div>
 
   <div class="dropdown-content">
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)" >A君</div>
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadpinggeintro()">平哥</div>
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)" >嘉明</div>
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)" >哲凯</div>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" >Jraky</div>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadpinggeintro()">William</div>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" >Christina</div>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" >AF</div>
     <div onmouseover="mOver(this)" onmouseout="mOut(this)" >党某</div>
-	<div onmouseover="mOver(this)" onmouseout="mOut(this)" >Stephen</div>
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)" >饺子</div>
+	<div onmouseover="mOver(this)" onmouseout="mOut(this)" >Kirari</div>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" >Baobao</div>
 
   </div>
 </div>
@@ -275,7 +274,7 @@ var yulutxt = document.getElementById("maincontent");
       yulutxt.innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "https://raw.githubusercontent.com/kuroyukiasuna/AAA-Association/master/texts/AAAintro.txt", true);
+  xhttp.open("GET", "", true);
   xhttp.send();
 };
 toMaincontent();
@@ -343,7 +342,7 @@ function loadYulu() {
       yulutxt.innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "https://raw.githubusercontent.com/kuroyukiasuna/AAA-Association/master/texts/a-kun%20yulu.txt", true);
+  xhttp.open("GET", "", true);
   xhttp.send();
 };
 
@@ -355,7 +354,7 @@ function loadHaha() {
       yulutxt.innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "https://raw.githubusercontent.com/kuroyukiasuna/AAA-Association/master/texts/hahaha.txt", true);
+  xhttp.open("GET", "", true);
   xhttp.send();
 };
 
@@ -367,7 +366,7 @@ function loadpinggeintro() {
       yulutxt.innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "https://raw.githubusercontent.com/kuroyukiasuna/AAA-Association/master/texts/pinggeintro.txt", true);
+  xhttp.open("GET", "", true);
   xhttp.send();
 };
 
@@ -379,7 +378,7 @@ function loadbaixueintro() {
       yulutxt.innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "https://raw.githubusercontent.com/kuroyukiasuna/AAA-Association/master/texts/whiteologyintro.txt", true);
+  xhttp.open("GET", "", true);
   xhttp.send();
 };
 
