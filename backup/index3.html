@@ -228,8 +228,6 @@ Your browser does not support the HTML5 canvas tag.</canvas>
 
 <div id= "navop1"  onclick = "calldashboard()"><div style="text-align: center;"></br></br>其他选项</div></div>
 
-<div id= "navop2"  onclick = "loadYulu()"><div style="text-align: center;"></br></br>DAF</div></div>
-
 
 <div id="db">
 <button id="buton1" onclick="loadgame()">play a game</button>
@@ -239,32 +237,6 @@ Your browser does not support the HTML5 canvas tag.</canvas>
 <div id="maincontent">&nbsp
 </div>
 
-
-<div id="navop3" class="dropdown">
-  <div class="dropbtn"><div style="text-align: center;"></br></br>成员列表</div></div>
-
-  <div class="dropdown-content">
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)" >Jraky</div>
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadpinggeintro()">William</div>
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)" >Christina</div>
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)" >AF</div>
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)" >党某</div>
-	<div onmouseover="mOver(this)" onmouseout="mOut(this)" >Kirari</div>
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)" >Baobao</div>
-
-  </div>
-</div>
-
-
-
-<div id="navop4" class="dropdown">
-  <div class="dropbtn"><div style="text-align: center;"></br></br>合作单位</div></div>
-
-  <div class="dropdown-content">
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)"onclick="loadbaixueintro()" >Nega Nebulas</div>
-
-  </div>
-</div>
 
 
 
@@ -296,7 +268,6 @@ var yulutxt = document.getElementById("maincontent");
   xhttp.open("GET", "", true);
   xhttp.send();
 };
-//toMaincontent();
 window.onbeforeunload = function () {
   window.scrollTo(0,0);
 };
@@ -415,7 +386,7 @@ obj.style.background = "";
 };
 
 var score = 0;
-var highscore = 0;
+var highscore = "test";
 
 function scoreplus(){
  score = score + 1;
@@ -482,7 +453,7 @@ score = 0;
 };
 
 function gethighscore(){
-var para2 = document.getElementById("highcount");
+var para2 = document.getElementById("count");
 para2.innerHTML = highscore;
 };
 
