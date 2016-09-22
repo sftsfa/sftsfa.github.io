@@ -1,0 +1,11 @@
+ver. staging 1.0.0 online
+ver. staging 1.0.1 added news-press
+ver. staging 1.1.0 game added
+ver. staging 1.1.1 starting game button changed, added load highscore
+ver. staging 1.1.2 fixed minor bugs: clicking on dishu will select texts
+ver. staging 1.1.3 added how to play 
+ver. staging 1.1.4 added warning1
+ver. staging 1.1.5 changed position of game start button
+ver. staging 1.2.0 Added Members and in-corperation with, minor changes: cursor & refresh scroll to top
+ver. staging 1.2.1 Added Whiteology Investigation Institution intro
+ver. staging 1.2.2 mind: url of background, create logo
