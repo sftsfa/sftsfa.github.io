@@ -5,7 +5,7 @@
 #pic{        /*logo*/
 width: 140px;
 height: 140px;
-position: absolute;
+position: fixed;
 top: 0px;
 left: 0px;
 border: 2px solid pink;
@@ -18,9 +18,8 @@ color: pink;
 #bodyconfig{
 width: 100%;
 height: 100%;
-background-image:url("https://github.com/sftsfa/sftsfa.github.io/blob/master/pics/starfield2012.gif?raw=true");
+background-image:url("http://paulbourke.net/miscellaneous/starfield/4096x2048.png");
 /* background-repeat: no-repeat; */
-background-attachment: fixed;
 
 }
 
@@ -65,7 +64,6 @@ top: 2px;
 position: absolute;
 background: "";
 cursor: pointer;
-color: pink;
 }
 
 #navop4{  /*option: in corporation with*/
@@ -76,7 +74,6 @@ top: 2px;
 position: absolute;
 background: "";
 cursor: pointer;
-color: pink;
 }
 
 #db{ /*dashboard*/
@@ -104,24 +101,12 @@ display: none;
 
 }
 
-#buton3{ /*dashboard: color-change */
-top: 14px;
-right: 90px;
-position: absolute;
+#buton3{
 display: none;
+
 }
-
-
 
 #buton4{
-display: none;
-}
-
-#input1{ /*dashboard: color-change-input */
-top: 14px;
-right: 7px;
-width: 75px;
-position: absolute;
 display: none;
 }
 
@@ -158,27 +143,30 @@ color: black;
 
 #gameoptions{
  position: absolute;
- top: 65px;
+ top: 54px;
  left: 90px;
+ color: pink;
 }
 
 #howtoplay{
 position: absolute;
 top: 20px;
 left: 90px;
+color: pink;
 }
 
 #warning1{
 position: absolute;
 top: 570px;
 left: 90px;
+color: pink;
 }
 
 #maincontent{
 width: 100%;
 height: 100%;
 top: 147px;
-left: 0px;
+left: 147.3px;
 position: absolute;
 color: pink;
 }
@@ -186,7 +174,7 @@ color: pink;
 
 .dropbtn {
     background-color: transparent;
-   /* color: pink; */
+    color: pink;
     width: 120px;
     height: 90px;
     border: none;
@@ -207,7 +195,7 @@ color: pink;
 }
 
 .dropdown-content div {
-      /*color: pink; words*/
+    color: pink;   /* words*/
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -221,7 +209,6 @@ color: pink;
 
 .dropdown:hover .dropbtn {
     background-color: transparent; /*member list itself*/
-	color: white;
 }
 
 
@@ -231,7 +218,7 @@ color: pink;
 <body id="bodyconfig">
 
 
-<img src= "https://github.com/sftsfa/sftsfa.github.io/blob/master/pics/SFTSFAlogo_Pink.png?raw=true" alt = "SFTSFA logo" id = "pic" onclick="toMaincontent()">
+<img src= # alt = "SFTSFA logo" id = "pic" onclick="clearmaincontent()">
 </img>
 
 
@@ -239,49 +226,17 @@ color: pink;
 Your browser does not support the HTML5 canvas tag.</canvas>
 
 
-<div id= "navop1" onmouseover="mOver1(this)" onmouseout="mOut1(this)" onclick = "calldashboard()"><div style="text-align: center;"></br></br>其他选项</div></div>
-
-<div id= "navop2"  onmouseover="mOver1(this)" onmouseout="mOut1(this)" onclick = "loadText('DAF')"><div style="text-align: center;"></br></br>DAF</div></div>
+<div id= "navop1"  onclick = "calldashboard()"><div style="text-align: center;"></br></br>其他选项</div></div>
 
 
 <div id="db">
 <button id="buton1" onclick="loadgame()">play a game</button>
-<button id="buton2" onclick="loadText('News')">新闻</button>
-<button id="buton3" onclick="colorswitch()">Theme Change</button>
-<input id="input1" value = "pink"></input>
+<button id="buton2" onclick="loadHaha()">News-press</button>
 </div>
 
 <div id="maincontent">&nbsp
 </div>
 
-
-<div id="navop3" class="dropdown">
-  <div class="dropbtn"><div style="text-align: center;"></br></br>成员列表</div></div>
-
-  <div class="dropdown-content">
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadText('Jraky')">老胡</div>
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadText('William')">大爷</div>
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadText('Christina')">金某</div>
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadText('AF')">AF</div>
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadText('Shinji')">党某</div>
-	<div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadText('Kirari')">奇洛里</div>
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadText('Baobao')">包包</div>
-	<div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadText('Dragon')">龙哥</div>
-	<div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadText('Ricecake')">年糕</div>
-
-  </div>
-</div>
-
-
-
-<div id="navop4" class="dropdown">
-  <div class="dropbtn"><div style="text-align: center;"></br></br>合作单位</div></div>
-
-  <div class="dropdown-content">
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)"onclick="loadText('NegaNebulas')" >Nega Nebulas</div>
-
-  </div>
-</div>
 
 
 
@@ -310,10 +265,9 @@ var yulutxt = document.getElementById("maincontent");
       yulutxt.innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/SFTSFAintro.txt", true);
+  xhttp.open("GET", "", true);
   xhttp.send();
 };
-//toMaincontent();
 window.onbeforeunload = function () {
   window.scrollTo(0,0);
 };
@@ -321,16 +275,12 @@ window.onbeforeunload = function () {
 function getdashboard(obj){
 var d1  = document.getElementById("buton1");
 var d2  = document.getElementById("buton2");
-var d3  = document.getElementById("buton3");
-var i1  = document.getElementById("input1");
  var id = setInterval(frame, 5);
  var pos = 0;
   function frame() {
     if (pos === 700) {
       d1.style.display = "inline";
       d2.style.display = "inline";
-      d3.style.display = "inline";
-      i1.style.display = "inline";
       clearInterval(id);
       
     } else {
@@ -343,17 +293,12 @@ var i1  = document.getElementById("input1");
 function hidedashboard(obj){
 var d1  = document.getElementById("buton1");
 var d2  = document.getElementById("buton2");
-var d3  = document.getElementById("buton3");
-var i1  = document.getElementById("input1");
-      d1.style.display = "none";
-      d2.style.display = "none";
-      d3.style.display = "none";
-      i1.style.display = "none";
  var id = setInterval(frame, 5);
   var pos = 700;
   function frame() {
     if (pos === 0) {
-
+      d1.style.display = "none";
+      d2.style.display = "none";
       obj.style.width = 2+'px';
        clearInterval(id);
     } else {
@@ -373,7 +318,9 @@ hidedashboard(d);
 }
 };
 
-function loadText(link) {
+
+
+function loadYulu() {
   var yulutxt = document.getElementById("maincontent");
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -381,11 +328,45 @@ function loadText(link) {
       yulutxt.innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/"+link+".txt", true);
+  xhttp.open("GET", "", true);
   xhttp.send();
 };
 
+function loadHaha() {
+  var yulutxt = document.getElementById("maincontent");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      yulutxt.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "", true);
+  xhttp.send();
+};
 
+function loadlaohuintro() {
+  var yulutxt = document.getElementById("maincontent");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      yulutxt.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "", true);
+  xhttp.send();
+};
+
+function loadbaixueintro() {
+  var yulutxt = document.getElementById("maincontent");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      yulutxt.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "", true);
+  xhttp.send();
+};
 
 function clearmaincontent(){
  var maintxt = document.getElementById("maincontent");
@@ -404,16 +385,8 @@ function mOut(obj){
 obj.style.background = "";
 };
 
-function mOver1(obj){
-obj.style.color = "white";
-};
-
-function mOut1(obj){
-obj.style.color =  currentcolor;
-};
-
 var score = 0;
-var highscore = 0;
+var highscore = "test";
 
 function scoreplus(){
  score = score + 1;
@@ -480,33 +453,11 @@ score = 0;
 };
 
 function gethighscore(){
-var para2 = document.getElementById("highcount");
+var para2 = document.getElementById("count");
 para2.innerHTML = highscore;
 };
 
 
-var currentcolor = "pink";
-
-function colorswitch(){
-var value = document.getElementById("input1").value;
- currentcolor = value;
- colorchange();
-}
-
-function colorchange(){
-var color1 = document.getElementById("pic");
-var color2 = document.getElementById("navbar");
-document.getElementById("navop1").style.color = currentcolor;
-document.getElementById("navop2").style.color = currentcolor;
-document.getElementById("navop3").style.color = currentcolor;
-document.getElementById("navop4").style.color = currentcolor;
-var color7 = document.getElementById("db");
-document.getElementById("maincontent").style.color = currentcolor;
-color1.style.color = currentcolor;
-color1.style.borderColor = currentcolor;
-color2.style.borderColor = currentcolor;
-color7.style.borderColor = currentcolor;
-}
 
 </script>
 
