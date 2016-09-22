@@ -234,7 +234,7 @@ Your browser does not support the HTML5 canvas tag.</canvas>
 
 <div id="db">
 <button id="buton1" onclick="loadgame()">play a game</button>
-<button id="buton2" onclick="loadHaha()">News-press</button>
+<button id="buton2" onclick="loadHaha()">新闻</button>
 </div>
 
 <div id="maincontent">&nbsp
@@ -245,8 +245,8 @@ Your browser does not support the HTML5 canvas tag.</canvas>
   <div class="dropbtn"><div style="text-align: center;"></br></br>成员列表</div></div>
 
   <div class="dropdown-content">
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loaddayeintro()">老胡</div>
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadlaohuintro()">大爷</div>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadlaohuintro()">老胡</div>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loaddayeintro()">大爷</div>
     <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="clearmaincontent()">金某</div>
     <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadafintro()">AF</div>
     <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loaddangmouintro()">党某</div>
@@ -386,7 +386,7 @@ function loadlaohuintro() {
       yulutxt.innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "", true);
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/Jraky.txt", true);
   xhttp.send();
 };
 
@@ -398,7 +398,7 @@ function loaddayeintro() {
       yulutxt.innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "", true);
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/William.txt", true);
   xhttp.send();
 };
 
@@ -410,7 +410,7 @@ function loaddangmouintro() {
       yulutxt.innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "", true);
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/Shinji.txt", true);
   xhttp.send();
 };
 
