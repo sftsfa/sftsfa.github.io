@@ -1,4 +1,6 @@
-﻿<div id="howtoplay"><strong>You have 10 seconds, try to click on the moving square as many times as possible!</strong></div>
+﻿</br>
+</br>
+<div id="howtoplay"><strong>十秒内尽可能多地点击移动的小方块~有谁能打到30分以上我就去写连载</strong></div>
 </br>
 <div id = "gameoptions">
 <button id = "hc" onclick= "gethighscore()">load highscore</button>
