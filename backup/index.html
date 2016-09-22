@@ -14,21 +14,14 @@ cursor: pointer;
 
 }
 
-#letsee{
-width: 100%;
-height: 100%;
-background: #d3d3d3;
-}
-
-
 
 #navbar{  /*navigation bar*/
- left: 0px;
+ left: 144.3px;
  top: 0px;
  height: 90px;
  width: 100%;
  position: absolute;
-/* border: 2px solid #ffffff; */
+ border: 2px solid #d3d3d3;
 }
 
 #navop1{  /*option: dashboard*/
@@ -204,16 +197,15 @@ position: absolute;
 </style>
 
 <title>SFTSFA</title>
-<body id="letsee">
+<body>
 
-<!---<img src= # alt = "AAA logo" id = "pic" onclick="toMaincontent()">
-</img>--->
+<img src= # alt = "AAA logo" id = "pic" onclick="toMaincontent()">
+</img>
 
 
 <canvas id="navbar">
 Your browser does not support the HTML5 canvas tag.</canvas>
 
-<!---
 <div id= "navop1" onmouseover="mOver(this)" onmouseout="mOut(this)"  onclick = "calldashboard()"><div style="text-align: center;"></br></br>dashboard</div></div>
 
 <div id= "navop2" onmouseover="mOver(this)" onmouseout="mOut(this)"  onclick = "loadYulu()"><div style="text-align: center;"></br></br>DAF</div></div>
@@ -227,8 +219,6 @@ Your browser does not support the HTML5 canvas tag.</canvas>
 
 <div id="maincontent">&nbsp
 </div>
---->
-<!---
 
 <div id="navop3" class="dropdown">
   <div class="dropbtn"><div style="text-align: center;"></br></br>成员列表</div></div>
@@ -245,7 +235,6 @@ Your browser does not support the HTML5 canvas tag.</canvas>
   </div>
 </div>
 
-
 <div id="navop4" class="dropdown">
   <div class="dropbtn"><div style="text-align: center;"></br></br>合作单位</div></div>
 
@@ -256,10 +245,8 @@ Your browser does not support the HTML5 canvas tag.</canvas>
 </div>
 
 
---->
 
-<div id="maincontentcolor">&nbsp
-</div>
+
 
 
 
@@ -429,7 +416,7 @@ function loadgame(){
       yulutxt.innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "https://raw.githubusercontent.com/kuroyukiasuna/AAA-Association/master/texts/gamecontent.txt", true);
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/gamecontent.txt", true);
   xhttp.send();
 };
 
