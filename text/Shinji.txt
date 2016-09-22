@@ -1,6 +1,7 @@
-<div style="height: 100%; width: 100%; top: 50px; left: 50px; position: relative;">
-</br>
-</br>
+﻿<div style="height: 100%; width: 100%; top: 50px; left: 50px; position: relative;">
+<h1>
+党某
+</h1>
 代号: 党某
 </br>
 原名: Shinji

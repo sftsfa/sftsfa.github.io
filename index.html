@@ -219,7 +219,7 @@ color: pink;
 <body id="bodyconfig">
 
 
-<img src= "https://github.com/sftsfa/sftsfa.github.io/blob/master/pics/SFTSFAlogo_Pink.png?raw=true" alt = "SFTSFA logo" id = "pic" onclick="clearmaincontent()">
+<img src= "https://github.com/sftsfa/sftsfa.github.io/blob/master/pics/SFTSFAlogo_Pink.png?raw=true" alt = "SFTSFA logo" id = "pic" onclick="toMaincontent()">
 </img>
 
 
@@ -296,10 +296,10 @@ var yulutxt = document.getElementById("maincontent");
       yulutxt.innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "", true);
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/SFTSFAintro.txt", true);
   xhttp.send();
 };
-//toMaincontent();
+toMaincontent();
 window.onbeforeunload = function () {
   window.scrollTo(0,0);
 };
@@ -372,7 +372,7 @@ function loadHaha() {
       yulutxt.innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "", true);
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/News.txt", true);
   xhttp.send();
 };
 
@@ -434,7 +434,7 @@ function loadkirariintro() {
       yulutxt.innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "", true);
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/Kirari.txt", true);
   xhttp.send();
 };
 
@@ -451,7 +451,7 @@ function loadnegaintro() {
       yulutxt.innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "", true);
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/NegaNebulas.txt", true);
   xhttp.send();
 };
 
