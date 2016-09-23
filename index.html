@@ -65,6 +65,7 @@ top: 2px;
 position: absolute;
 background: "";
 cursor: pointer;
+color: pink;
 }
 
 #navop4{  /*option: in corporation with*/
@@ -75,6 +76,7 @@ top: 2px;
 position: absolute;
 background: "";
 cursor: pointer;
+color: pink;
 }
 
 #db{ /*dashboard*/
@@ -102,12 +104,24 @@ display: none;
 
 }
 
-#buton3{
+#buton3{ /*dashboard: color-change */
+top: 14px;
+right: 90px;
+position: absolute;
 display: none;
-
 }
 
+
+
 #buton4{
+display: none;
+}
+
+#input1{ /*dashboard: color-change-input */
+top: 14px;
+right: 7px;
+width: 75px;
+position: absolute;
 display: none;
 }
 
@@ -146,21 +160,18 @@ color: black;
  position: absolute;
  top: 65px;
  left: 90px;
- color: pink;
 }
 
 #howtoplay{
 position: absolute;
 top: 20px;
 left: 90px;
-color: pink;
 }
 
 #warning1{
 position: absolute;
 top: 570px;
 left: 90px;
-color: pink;
 }
 
 #maincontent{
@@ -175,7 +186,7 @@ color: pink;
 
 .dropbtn {
     background-color: transparent;
-    color: pink;
+   /* color: pink; */
     width: 120px;
     height: 90px;
     border: none;
@@ -196,7 +207,7 @@ color: pink;
 }
 
 .dropdown-content div {
-    color: pink;   /* words*/
+      /*color: pink; words*/
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -236,6 +247,8 @@ Your browser does not support the HTML5 canvas tag.</canvas>
 <div id="db">
 <button id="buton1" onclick="loadgame()">play a game</button>
 <button id="buton2" onclick="loadHaha()">新闻</button>
+<button id="buton3" onclick="colorswitch()">Theme Change</button>
+<input id="input1" value = "pink"></input>
 </div>
 
 <div id="maincontent">&nbsp
@@ -308,12 +321,16 @@ window.onbeforeunload = function () {
 function getdashboard(obj){
 var d1  = document.getElementById("buton1");
 var d2  = document.getElementById("buton2");
+var d3  = document.getElementById("buton3");
+var i1  = document.getElementById("input1");
  var id = setInterval(frame, 5);
  var pos = 0;
   function frame() {
     if (pos === 700) {
       d1.style.display = "inline";
       d2.style.display = "inline";
+      d3.style.display = "inline";
+      i1.style.display = "inline";
       clearInterval(id);
       
     } else {
@@ -326,12 +343,16 @@ var d2  = document.getElementById("buton2");
 function hidedashboard(obj){
 var d1  = document.getElementById("buton1");
 var d2  = document.getElementById("buton2");
+var d3  = document.getElementById("buton3");
+var i1  = document.getElementById("input1");
  var id = setInterval(frame, 5);
   var pos = 700;
   function frame() {
     if (pos === 0) {
       d1.style.display = "none";
       d2.style.display = "none";
+      d3.style.display = "none";
+      i1.style.display = "none";
       obj.style.width = 2+'px';
        clearInterval(id);
     } else {
@@ -530,7 +551,7 @@ obj.style.color = "white";
 };
 
 function mOut1(obj){
-obj.style.color = "pink";
+obj.style.color =  currentcolor;
 };
 
 var score = 0;
@@ -608,6 +629,28 @@ para2.innerHTML = highscore;
 };
 
 
+var currentcolor = "pink";
+
+function colorswitch(){
+var value = document.getElementById("input1").value;
+ currentcolor = value;
+ colorchange();
+}
+
+function colorchange(){
+var color1 = document.getElementById("pic");
+var color2 = document.getElementById("navbar");
+document.getElementById("navop1").style.color = currentcolor;
+document.getElementById("navop2").style.color = currentcolor;
+document.getElementById("navop3").style.color = currentcolor;
+document.getElementById("navop4").style.color = currentcolor;
+var color7 = document.getElementById("db");
+document.getElementById("maincontent").style.color = currentcolor;
+color1.style.color = currentcolor;
+color1.style.borderColor = currentcolor;
+color2.style.borderColor = currentcolor;
+color7.style.borderColor = currentcolor;
+}
 
 </script>
 
