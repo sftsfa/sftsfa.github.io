@@ -5,7 +5,7 @@
 #pic{        /*logo*/
 width: 140px;
 height: 140px;
-position: fixed;
+position: absolute;
 top: 0px;
 left: 0px;
 border: 2px solid pink;
@@ -18,7 +18,7 @@ color: pink;
 #bodyconfig{
 width: 100%;
 height: 100%;
-background-image:url("http://paulbourke.net/miscellaneous/starfield/4096x2048.png");
+background-image:url("https://github.com/sftsfa/sftsfa.github.io/blob/master/pics/starfield2012.gif?raw=true");
 /* background-repeat: no-repeat; */
 
 }
@@ -143,7 +143,7 @@ color: black;
 
 #gameoptions{
  position: absolute;
- top: 54px;
+ top: 65px;
  left: 90px;
  color: pink;
 }
@@ -166,7 +166,7 @@ color: pink;
 width: 100%;
 height: 100%;
 top: 147px;
-left: 147.3px;
+left: 0px;
 position: absolute;
 color: pink;
 }
@@ -209,6 +209,7 @@ color: pink;
 
 .dropdown:hover .dropbtn {
     background-color: transparent; /*member list itself*/
+	color: white;
 }
 
 
@@ -218,7 +219,7 @@ color: pink;
 <body id="bodyconfig">
 
 
-<img src= # alt = "SFTSFA logo" id = "pic" onclick="clearmaincontent()">
+<img src= "https://github.com/sftsfa/sftsfa.github.io/blob/master/pics/SFTSFAlogo_Pink.png?raw=true" alt = "SFTSFA logo" id = "pic" onclick="toMaincontent()">
 </img>
 
 
@@ -226,14 +227,14 @@ color: pink;
 Your browser does not support the HTML5 canvas tag.</canvas>
 
 
-<div id= "navop1"  onclick = "calldashboard()"><div style="text-align: center;"></br></br>其他选项</div></div>
+<div id= "navop1" onmouseover="mOver1(this)" onmouseout="mOut1(this)" onclick = "calldashboard()"><div style="text-align: center;"></br></br>其他选项</div></div>
 
-<div id= "navop2"  onclick = "loadYulu()"><div style="text-align: center;"></br></br>DAF</div></div>
+<div id= "navop2"  onmouseover="mOver1(this)" onmouseout="mOut1(this)" onclick = "loadDAF()"><div style="text-align: center;"></br></br>DAF</div></div>
 
 
 <div id="db">
 <button id="buton1" onclick="loadgame()">play a game</button>
-<button id="buton2" onclick="loadHaha()">News-press</button>
+<button id="buton2" onclick="loadHaha()">新闻</button>
 </div>
 
 <div id="maincontent">&nbsp
@@ -244,13 +245,15 @@ Your browser does not support the HTML5 canvas tag.</canvas>
   <div class="dropbtn"><div style="text-align: center;"></br></br>成员列表</div></div>
 
   <div class="dropdown-content">
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)" >Jraky</div>
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadpinggeintro()">William</div>
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)" >Christina</div>
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)" >AF</div>
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)" >党某</div>
-	<div onmouseover="mOver(this)" onmouseout="mOut(this)" >Kirari</div>
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)" >Baobao</div>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadlaohuintro()">老胡</div>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loaddayeintro()">大爷</div>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadjinmouintro()">金某</div>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadafintro()">AF</div>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loaddangmouintro()">党某</div>
+	<div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadkirariintro()">奇洛里</div>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadbaobaointro()">包包</div>
+	<div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loaddragonintro()">龙哥</div>
+	<div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadrcintro()">年糕</div>
 
   </div>
 </div>
@@ -261,7 +264,7 @@ Your browser does not support the HTML5 canvas tag.</canvas>
   <div class="dropbtn"><div style="text-align: center;"></br></br>合作单位</div></div>
 
   <div class="dropdown-content">
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)"onclick="loadbaixueintro()" >Nega Nebulas</div>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)"onclick="loadnegaintro()" >Nega Nebulas</div>
 
   </div>
 </div>
@@ -293,7 +296,7 @@ var yulutxt = document.getElementById("maincontent");
       yulutxt.innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "", true);
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/SFTSFAintro.txt", true);
   xhttp.send();
 };
 //toMaincontent();
@@ -349,7 +352,7 @@ hidedashboard(d);
 
 
 
-function loadYulu() {
+function loadDAF() {
   var yulutxt = document.getElementById("maincontent");
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -357,9 +360,11 @@ function loadYulu() {
       yulutxt.innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "", true);
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/DAF.txt", true);
   xhttp.send();
 };
+
+
 
 function loadHaha() {
   var yulutxt = document.getElementById("maincontent");
@@ -369,9 +374,11 @@ function loadHaha() {
       yulutxt.innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "", true);
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/News.txt", true);
   xhttp.send();
 };
+
+//成员简介从这里开始
 
 function loadlaohuintro() {
   var yulutxt = document.getElementById("maincontent");
@@ -381,11 +388,11 @@ function loadlaohuintro() {
       yulutxt.innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "", true);
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/Jraky.txt", true);
   xhttp.send();
 };
 
-function loadbaixueintro() {
+function loaddayeintro() {
   var yulutxt = document.getElementById("maincontent");
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -393,9 +400,112 @@ function loadbaixueintro() {
       yulutxt.innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "", true);
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/William.txt", true);
   xhttp.send();
 };
+
+function loaddangmouintro() {
+  var yulutxt = document.getElementById("maincontent");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      yulutxt.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/Shinji.txt", true);
+  xhttp.send();
+};
+
+function loadafintro() {
+  var yulutxt = document.getElementById("maincontent");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      yulutxt.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/AF.txt", true);
+  xhttp.send();
+};
+
+function loadkirariintro() {
+  var yulutxt = document.getElementById("maincontent");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      yulutxt.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/Kirari.txt", true);
+  xhttp.send();
+};
+
+function loadjinmouintro() {
+  var yulutxt = document.getElementById("maincontent");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      yulutxt.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/Christina.txt", true);
+  xhttp.send();
+};
+
+function loadrcintro() {
+  var yulutxt = document.getElementById("maincontent");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      yulutxt.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/Ricecake.txt", true);
+  xhttp.send();
+};
+
+function loaddragonintro() {
+  var yulutxt = document.getElementById("maincontent");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      yulutxt.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/Dragon.txt", true);
+  xhttp.send();
+};
+
+function loadbaobaointro() {
+  var yulutxt = document.getElementById("maincontent");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      yulutxt.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/Baobao.txt", true);
+  xhttp.send();
+};
+
+//成员简介到这里结束
+
+
+//合作单位简介从这里开始
+
+function loadnegaintro() {
+  var yulutxt = document.getElementById("maincontent");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      yulutxt.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/NegaNebulas.txt", true);
+  xhttp.send();
+};
+
+//合作单位简介到这里结束
 
 function clearmaincontent(){
  var maintxt = document.getElementById("maincontent");
@@ -414,13 +524,23 @@ function mOut(obj){
 obj.style.background = "";
 };
 
+function mOver1(obj){
+obj.style.color = "white";
+};
+
+function mOut1(obj){
+obj.style.color = "pink";
+};
+
 var score = 0;
 var highscore = 0;
 
 function scoreplus(){
+if(score <= 24){
  score = score + 1;
  var para = document.getElementById("count");
  para.innerHTML = score;
+ }
 };
 
 function loadgame(){

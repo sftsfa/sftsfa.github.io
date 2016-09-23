@@ -1,5 +1,8 @@
-﻿<div id="howtoplay"><strong>You have 10 seconds, try to click on the moving square as many times as possible!</strong></div>
+﻿<div style="height: 100%; width: 100%; top: 50px; left: 50px; position: relative;">
 </br>
+</br>
+<div id="howtoplay"><strong>十秒内尽可能多地点击移动的小方块~！&nbsp &nbsp有谁能打到25分以上我就去写连载&nbsp0.0</strong></div>
+</br></br>
 <div id = "gameoptions">
 <button id = "hc" onclick= "gethighscore()">load highscore</button>
 <button id = "tergame" onclick= "cleargame()">stop playing</button>
@@ -13,3 +16,4 @@ score: <span id= "count">0</span> &nbsp highscore: <span id= "highcount">click l
 </div>
 </br>
 <div id= "warning1">注意：此网站并没有file server,关闭网页后不会保存highscore。</div>
+</div>

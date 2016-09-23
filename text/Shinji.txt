@@ -1,0 +1,33 @@
+﻿<div style="height: 100%; width: 100%; top: 50px; left: 50px; position: relative;">
+<h1>
+党某
+</h1>
+代号: 党某
+</br>
+原名: Shinji
+</br>
+性别: 男
+</br>
+生日: 4.29
+</br>
+物理综合: lv.4
+</br>
+魔法综合: lv.4
+</br>
+回路属性: 暗
+</br>
+回路分布: 46
+</br>
+擅长领域: 术式构成，结界构筑，性质控制
+</br>
+</br>
+备注:这傻逼已经拖了2整年不写连载了。
+</br>
+</br>
+属性继承自魔术界已没落的八祖之一，始祖之暗。<span style= "color: red;">有个妹妹叫穹。</span>
+</br>
+由于回路构成特殊，无法使用打击性质的魔术。会一些剑技，拥有内置固有结界"sword art system" 和自制术式"tsukiyomi unit"。
+</br>
+</br>
+语录: 艾米莉亚!
+</div>
