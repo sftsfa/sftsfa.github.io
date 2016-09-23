@@ -345,14 +345,15 @@ var d1  = document.getElementById("buton1");
 var d2  = document.getElementById("buton2");
 var d3  = document.getElementById("buton3");
 var i1  = document.getElementById("input1");
- var id = setInterval(frame, 5);
-  var pos = 700;
-  function frame() {
-    if (pos === 0) {
       d1.style.display = "none";
       d2.style.display = "none";
       d3.style.display = "none";
       i1.style.display = "none";
+ var id = setInterval(frame, 5);
+  var pos = 700;
+  function frame() {
+    if (pos === 0) {
+
       obj.style.width = 2+'px';
        clearInterval(id);
     } else {
