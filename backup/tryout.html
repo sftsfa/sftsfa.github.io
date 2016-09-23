@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+#pic{        /*logo*/
+width: 140px;
+height: 140px;
+position: absolute;
+top: 0px;
+left: 0px;
+border: 2px solid pink;
+background: #transparent;
+cursor: pointer;
+color: pink;
+
+}
+
+#bodyconfig{
+width: 100%;
+height: 100%;
+background-image:url("https://github.com/sftsfa/sftsfa.github.io/blob/master/pics/starfield2012.gif?raw=true");
+/* background-repeat: no-repeat; */
+background-attachment: fixed;
+}
+
+
+
+#navbar{  /*navigation bar*/
+ left: 144.3px;
+ top: 0px;
+ height: 90px;
+ width: 100%;
+ position: absolute;
+ border: 2px solid pink; 
+}
+
+#navop1{  /*option: dashboard*/
+width: 120px;
+height: 90px;
+left: 504.3px;
+top: 3px;
+position: absolute;
+background: "";
+cursor: pointer;
+color: pink;
+}
+
+#navop2{  /*option: DAF*/
+width: 120px;
+height: 90px;
+left: 144.3px;
+top: 3px;
+position: absolute;
+background: "";
+cursor: pointer;
+color: pink;
+}
+
+#navop3{  /*option: Member List*/
+width: 120px;
+height: 90px;
+left: 264.3px;
+top: 2px;
+position: absolute;
+background: "";
+cursor: pointer;
+color:pink;
+}
+
+#navop4{  /*option: in corporation with*/
+width: 120px;
+height: 90px;
+left: 384.3px;
+top: 2px;
+position: absolute;
+background: "";
+cursor: pointer;
+color: pink;
+}
+
+#db{ /*dashboard*/
+width: 2px;
+height: 44.9px;
+background: transparent;
+top: 94.7px;
+left: 144.3px;
+position: absolute;
+border: 2px solid pink; 
+}
+
+#buton1{  /*dashboard: play a game*/
+top: 14px;
+left: 7px;
+position: relative;
+display: none;
+
+}
+#buton2{ /*dashboard: news-press */
+top: 14px;
+left: 7px;
+position: relative;
+display: none;
+
+}
+
+#buton3{ /*dashboard: color-change */
+top: 14px;
+right: 7px;
+position: relative;
+display: none;
+}
+
+
+
+#buton4{
+display: none;
+}
+
+#input1{ /*dashboard: color-change-input */
+top: 14px;
+left: 7px;
+position: relative;
+display: none;
+}
+
+#dishu{
+width: 75px;
+height: 75px;
+position: absolute;
+background: gold;
+display: none;
+
+}
+
+#container {
+  width: 450px;
+  height: 450px;
+  position: absolute;
+top: 90px;
+left: 90px;
+  background: silver;
+border: 10px solid #f3f3f3;
+}
+
+#confirmop{
+width: 120px;
+height: 90px;
+top: 90px;
+left: 560px;
+position: absolute;
+background: #f3f3f3;
+display: block;
+color: black;
+
+}
+
+#gameoptions{
+ position: absolute;
+ top: 65px;
+ left: 90px;
+}
+
+#howtoplay{
+position: absolute;
+top: 20px;
+left: 90px;
+}
+
+#warning1{
+position: absolute;
+top: 570px;
+left: 90px;
+}
+
+#maincontent{
+width: 100%;
+height: 100%;
+top: 147px;
+left: 0px;
+position: absolute;
+color: pink;
+}
+
+
+.dropbtn {
+    background-color: transparent;
+    width: 120px;
+    height: 90px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #4f4f4f;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content div {
+     /* words*/
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: transparent;}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: transparent; /*member list itself*/
+	color: white;
+}
+
+
+</style>
+
+<title>SFTSFA</title>
+<body id="bodyconfig">
+
+
+<img src= "https://github.com/sftsfa/sftsfa.github.io/blob/master/pics/SFTSFAlogo_Pink.png?raw=true" alt = "SFTSFA logo" id = "pic" onclick="toMaincontent()">
+</img>
+
+
+<canvas id="navbar">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+
+<div id= "navop1" onmouseover="mOver1(this)" onmouseout="mOut1(this)" onclick = "calldashboard()"><div style="text-align: center;"></br></br>其他选项</div></div>
+
+<div id= "navop2"  onmouseover="mOver1(this)" onmouseout="mOut1(this)" onclick = "loadDAF()"><div style="text-align: center;"></br></br>DAF</div></div>
+
+
+<div id="db">
+<button id="buton1" onclick="loadgame()">play a game</button>
+<button id="buton2" onclick="loadHaha()">新闻</button>
+<button id="buton3" onclick="colorswitch()">Theme Change</button>
+<input id="input1" value = "pink"></input>
+</div>
+
+<div id="maincontent">&nbsp
+</div>
+
+
+<div id="navop3" class="dropdown">
+  <div class="dropbtn"><div style="text-align: center;"></br></br>成员列表</div></div>
+
+  <div class="dropdown-content">
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadlaohuintro()">老胡</div>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loaddayeintro()">大爷</div>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadjinmouintro()">金某</div>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadafintro()">AF</div>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loaddangmouintro()">党某</div>
+	<div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadkirariintro()">奇洛里</div>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadbaobaointro()">包包</div>
+	<div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loaddragonintro()">龙哥</div>
+	<div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadrcintro()">年糕</div>
+
+  </div>
+</div>
+
+
+
+<div id="navop4" class="dropdown">
+  <div class="dropbtn"><div style="text-align: center;"></br></br>合作单位</div></div>
+
+  <div class="dropdown-content">
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)"onclick="loadnegaintro()" >Nega Nebulas</div>
+
+  </div>
+</div>
+
+
+
+
+
+<script>
+var nevigationbar = document.getElementById("navbar");
+var ctx = nevigationbar.getContext("2d");
+// Create gradient
+var grd = ctx.createLinearGradient(0,0,0,200);
+grd.addColorStop(0,"transparent");
+grd.addColorStop(1,"transparent");
+// Fill with gradient
+ctx.fillStyle = grd;
+ctx.fillRect(0,0,99999,150);
+
+function myFunction(){
+ alert("you clicked on it!");
+};
+
+function toMaincontent(){
+var yulutxt = document.getElementById("maincontent");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      yulutxt.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/SFTSFAintro.txt", true);
+  xhttp.send();
+};
+toMaincontent();
+window.onbeforeunload = function () {
+  window.scrollTo(0,0);
+};
+
+function getdashboard(obj){
+var d1  = document.getElementById("buton1");
+var d2  = document.getElementById("buton2");
+var d3  = document.getElementById("buton3");
+var i1  = document.getElementById("input1");
+ var id = setInterval(frame, 5);
+ var pos = 0;
+  function frame() {
+    if (pos === 700) {
+      d1.style.display = "inline";
+      d2.style.display = "inline";
+      d3.style.display = "inline";
+      i1.style.display = "inline";
+      clearInterval(id);
+      
+    } else {
+      pos += 100; 
+      obj.style.width = pos+'px';
+    }
+}
+};
+
+function hidedashboard(obj){
+var d1  = document.getElementById("buton1");
+var d2  = document.getElementById("buton2");
+var d3  = document.getElementById("buton3");
+var i1  = document.getElementById("input1");
+ var id = setInterval(frame, 5);
+  var pos = 700;
+  function frame() {
+    if (pos === 0) {
+      d1.style.display = "none";
+      d2.style.display = "none";
+      d3.style.display = "none";
+      i1.style.display = "none";
+      obj.style.width = 2+'px';
+       clearInterval(id);
+    } else {
+      pos -= 100; 
+      obj.style.width = pos+'px';
+    }
+}
+};
+
+function calldashboard(){
+var d  = document.getElementById("db");
+if(d.style.width < "700px"){
+getdashboard(d);
+
+}else{
+hidedashboard(d);
+}
+};
+
+
+
+function loadDAF() {
+  var yulutxt = document.getElementById("maincontent");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      yulutxt.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/DAF.txt", true);
+  xhttp.send();
+};
+
+
+
+function loadHaha() {
+  var yulutxt = document.getElementById("maincontent");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      yulutxt.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/News.txt", true);
+  xhttp.send();
+};
+
+//成员简介从这里开始
+
+function loadlaohuintro() {
+  var yulutxt = document.getElementById("maincontent");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      yulutxt.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/Jraky.txt", true);
+  xhttp.send();
+};
+
+function loaddayeintro() {
+  var yulutxt = document.getElementById("maincontent");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      yulutxt.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/William.txt", true);
+  xhttp.send();
+};
+
+function loaddangmouintro() {
+  var yulutxt = document.getElementById("maincontent");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      yulutxt.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/Shinji.txt", true);
+  xhttp.send();
+};
+
+function loadafintro() {
+  var yulutxt = document.getElementById("maincontent");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      yulutxt.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/AF.txt", true);
+  xhttp.send();
+};
+
+function loadkirariintro() {
+  var yulutxt = document.getElementById("maincontent");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      yulutxt.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/Kirari.txt", true);
+  xhttp.send();
+};
+
+function loadjinmouintro() {
+  var yulutxt = document.getElementById("maincontent");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      yulutxt.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/Christina.txt", true);
+  xhttp.send();
+};
+
+function loadrcintro() {
+  var yulutxt = document.getElementById("maincontent");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      yulutxt.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/Ricecake.txt", true);
+  xhttp.send();
+};
+
+function loaddragonintro() {
+  var yulutxt = document.getElementById("maincontent");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      yulutxt.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/Dragon.txt", true);
+  xhttp.send();
+};
+
+function loadbaobaointro() {
+  var yulutxt = document.getElementById("maincontent");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      yulutxt.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/Baobao.txt", true);
+  xhttp.send();
+};
+
+//成员简介到这里结束
+
+
+//合作单位简介从这里开始
+
+function loadnegaintro() {
+  var yulutxt = document.getElementById("maincontent");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      yulutxt.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/NegaNebulas.txt", true);
+  xhttp.send();
+};
+
+//合作单位简介到这里结束
+
+function clearmaincontent(){
+ var maintxt = document.getElementById("maincontent");
+maintxt.innerHTML = "";
+var d  = document.getElementById("db");
+if(d.style.width > "3px"){
+ hidedashboard(d);
+}
+};
+
+function mOver(obj){
+obj.style.background = "#d3d3d3";
+};
+
+function mOut(obj){
+obj.style.background = "";
+};
+
+function mOver1(obj){
+obj.style.color = "white";
+
+};
+
+function mOut1(obj){
+obj.style.color =  currentcolor;
+};
+
+var score = 0;
+var highscore = 0;
+
+function scoreplus(){
+if(score <= 24){
+ score = score + 1;
+ var para = document.getElementById("count");
+ para.innerHTML = score;
+ }
+};
+
+function loadgame(){
+ var yulutxt = document.getElementById("maincontent");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      yulutxt.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/gamecontent.txt", true);
+  xhttp.send();
+};
+
+function game(){
+var para = document.getElementById("count");
+var confirmop = document.getElementById("confirmop");
+var para2 = document.getElementById("highcount");
+var gamebutton = document.getElementById("callgame");
+var dishu = document.getElementById("dishu");
+confirmop.style.display = "none";
+dishu.style.display = "block";
+para2.innerHTML = highscore;
+
+var dtop = 0;
+var dleft = 0;
+var timer = 0;
+score = 0;
+  var id = setInterval(frame, 900);
+  function frame() {
+    if (timer == 10) {
+dishu.style.display = "none";
+confirmop.style.display = "block";
+ if(score > highscore){
+ highscore = score;
+para2.innerHTML = highscore+ "&nbsp new highscore!";
+}else{
+para2.innerHTML = highscore+ "&nbsp play again?";
+}
+
+     gamebutton.innerHTML = "</br>play again";
+ para.innerHTML = score;
+      clearInterval(id);
+    } else {
+      timer++; 
+      dtop = Math.floor((Math.random() * 375));
+      dleft = Math.floor((Math.random() * 375));
+      dishu.style.top = dtop + 'px'; 
+      dishu.style.left = dleft + 'px'; 
+    }
+  }
+
+};
+
+function cleargame(){
+ var maintxt = document.getElementById("maincontent");
+maintxt.innerHTML = "&nbsp";
+score = 0;
+};
+
+function gethighscore(){
+var para2 = document.getElementById("highcount");
+para2.innerHTML = highscore;
+
+};
+
+var currentcolor = "pink";
+
+function colorswitch(){
+var value = document.getElementById("input1").value;
+ currentcolor = value;
+ colorchange();
+}
+
+function colorchange(){
+var color1 = document.getElementById("pic");
+var color2 = document.getElementById("navbar");
+document.getElementById("navop1").style.color = currentcolor;
+document.getElementById("navop2").style.color = currentcolor;
+document.getElementById("navop3").style.color = currentcolor;
+document.getElementById("navop4").style.color = currentcolor;
+var color7 = document.getElementById("db");
+document.getElementById("maincontent").style.color = currentcolor;
+color1.style.color = currentcolor;
+color1.style.borderColor = currentcolor;
+color2.style.borderColor = currentcolor;
+color7.style.borderColor = currentcolor;
+}
+
+
+
+</script>
+
+</body>
+
+</html>
