@@ -143,7 +143,7 @@ color: black;
 
 #gameoptions{
  position: absolute;
- top: 54px;
+ top: 65px;
  left: 90px;
  color: pink;
 }
@@ -247,13 +247,13 @@ Your browser does not support the HTML5 canvas tag.</canvas>
   <div class="dropdown-content">
     <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadlaohuintro()">老胡</div>
     <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loaddayeintro()">大爷</div>
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="clearmaincontent()">金某</div>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadjinmouintro()">金某</div>
     <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadafintro()">AF</div>
     <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loaddangmouintro()">党某</div>
 	<div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadkirariintro()">奇洛里</div>
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)" >包包</div>
-	<div onmouseover="mOver(this)" onmouseout="mOut(this)" >龙哥</div>
-	<div onmouseover="mOver(this)" onmouseout="mOut(this)" >年糕</div>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadbaobaointro()">包包</div>
+	<div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loaddragonintro()">龙哥</div>
+	<div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadrcintro()">年糕</div>
 
   </div>
 </div>
@@ -360,9 +360,11 @@ function loadDAF() {
       yulutxt.innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "", true);
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/DAF.txt", true);
   xhttp.send();
 };
+
+
 
 function loadHaha() {
   var yulutxt = document.getElementById("maincontent");
@@ -438,6 +440,54 @@ function loadkirariintro() {
   xhttp.send();
 };
 
+function loadjinmouintro() {
+  var yulutxt = document.getElementById("maincontent");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      yulutxt.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/Christina.txt", true);
+  xhttp.send();
+};
+
+function loadrcintro() {
+  var yulutxt = document.getElementById("maincontent");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      yulutxt.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/Ricecake.txt", true);
+  xhttp.send();
+};
+
+function loaddragonintro() {
+  var yulutxt = document.getElementById("maincontent");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      yulutxt.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/Dragon.txt", true);
+  xhttp.send();
+};
+
+function loadbaobaointro() {
+  var yulutxt = document.getElementById("maincontent");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      yulutxt.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/Baobao.txt", true);
+  xhttp.send();
+};
+
 //成员简介到这里结束
 
 
@@ -486,9 +536,11 @@ var score = 0;
 var highscore = 0;
 
 function scoreplus(){
+if(score <= 24){
  score = score + 1;
  var para = document.getElementById("count");
  para.innerHTML = score;
+ }
 };
 
 function loadgame(){
