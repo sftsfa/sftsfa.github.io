@@ -1,3 +1,16 @@
 <div style="height: 100%; width: 100%; top: 50px; left: 50px; position: relative;">
-我还没想好这里放啥。。。 
+UPDATED: 31st Jan. 2017
+</br>
+</br>
+这是一个很简单的道理。</br>
+无论是写连载还是建官网，都是为了这个组织做一些事情。</br>
+觉得建官网没意思，我们就不建。</br>
+喜欢看连载，我就去写。</br>
+无论是建官网还是写连载，都是我们在努力地为组织做事。</br>
+既然组织成员觉得没意义，我们就换个approach。无可厚非。</br>
+idea是好的，缺乏appeal和行动力。</br>
+</br>
+</br>这个网站将于1st Feb. 2017 12:00DST从git服务器上撤下线。
+</br>感谢为网站提供advise和帮助的奇洛里，大爷，AF，老胡。
+</br>我们有缘再一起为SFTSFA创造些什么。
 <div>
