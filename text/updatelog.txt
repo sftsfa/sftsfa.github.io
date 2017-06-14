@@ -9,3 +9,6 @@ ver. staging 1.1.5 changed position of game start button
 ver. staging 1.2.0 Added Members and in-corperation with, minor changes: cursor & refresh scroll to top
 ver. staging 1.2.1 Added Whiteology Investigation Institution intro
 ver. staging 1.2.2 mind: url of background, create logo
+
+2017.6.13
+ver staging 1.2.2 Re-starting project
