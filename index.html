@@ -241,12 +241,12 @@ Your browser does not support the HTML5 canvas tag.</canvas>
 
 <div id= "navop1" onmouseover="mOver1(this)" onmouseout="mOut1(this)" onclick = "calldashboard()"><div style="text-align: center;"></br></br>其他选项</div></div>
 
-<div id= "navop2"  onmouseover="mOver1(this)" onmouseout="mOut1(this)" onclick = "loadDAF()"><div style="text-align: center;"></br></br>DAF</div></div>
+<div id= "navop2"  onmouseover="mOver1(this)" onmouseout="mOut1(this)" onclick = "loadText('DAF')"><div style="text-align: center;"></br></br>DAF</div></div>
 
 
 <div id="db">
 <button id="buton1" onclick="loadgame()">play a game</button>
-<button id="buton2" onclick="loadHaha()">新闻</button>
+<button id="buton2" onclick="loadText('News')">新闻</button>
 <button id="buton3" onclick="colorswitch()">Theme Change</button>
 <input id="input1" value = "pink"></input>
 </div>
@@ -259,15 +259,15 @@ Your browser does not support the HTML5 canvas tag.</canvas>
   <div class="dropbtn"><div style="text-align: center;"></br></br>成员列表</div></div>
 
   <div class="dropdown-content">
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadlaohuintro()">老胡</div>
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loaddayeintro()">大爷</div>
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadjinmouintro()">金某</div>
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadafintro()">AF</div>
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loaddangmouintro()">党某</div>
-	<div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadkirariintro()">奇洛里</div>
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadbaobaointro()">包包</div>
-	<div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loaddragonintro()">龙哥</div>
-	<div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadrcintro()">年糕</div>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadText('Jraky')">老胡</div>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadText('William')">大爷</div>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadText('Christina')">金某</div>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadText('AF')">AF</div>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadText('Shinji')">党某</div>
+	<div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadText('Kirari')">奇洛里</div>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadText('Baobao')">包包</div>
+	<div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadText('Dragon')">龙哥</div>
+	<div onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="loadText('Ricecake')">年糕</div>
 
   </div>
 </div>
@@ -278,7 +278,7 @@ Your browser does not support the HTML5 canvas tag.</canvas>
   <div class="dropbtn"><div style="text-align: center;"></br></br>合作单位</div></div>
 
   <div class="dropdown-content">
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)"onclick="loadnegaintro()" >Nega Nebulas</div>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)"onclick="loadText('NegaNebulas')" >Nega Nebulas</div>
 
   </div>
 </div>
@@ -373,9 +373,7 @@ hidedashboard(d);
 }
 };
 
-
-
-function loadDAF() {
+function loadText(link) {
   var yulutxt = document.getElementById("maincontent");
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -383,152 +381,11 @@ function loadDAF() {
       yulutxt.innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/DAF.txt", true);
+  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/"+link+".txt", true);
   xhttp.send();
 };
 
 
-
-function loadHaha() {
-  var yulutxt = document.getElementById("maincontent");
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      yulutxt.innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/News.txt", true);
-  xhttp.send();
-};
-
-//成员简介从这里开始
-
-function loadlaohuintro() {
-  var yulutxt = document.getElementById("maincontent");
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      yulutxt.innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/Jraky.txt", true);
-  xhttp.send();
-};
-
-function loaddayeintro() {
-  var yulutxt = document.getElementById("maincontent");
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      yulutxt.innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/William.txt", true);
-  xhttp.send();
-};
-
-function loaddangmouintro() {
-  var yulutxt = document.getElementById("maincontent");
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      yulutxt.innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/Shinji.txt", true);
-  xhttp.send();
-};
-
-function loadafintro() {
-  var yulutxt = document.getElementById("maincontent");
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      yulutxt.innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/AF.txt", true);
-  xhttp.send();
-};
-
-function loadkirariintro() {
-  var yulutxt = document.getElementById("maincontent");
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      yulutxt.innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/Kirari.txt", true);
-  xhttp.send();
-};
-
-function loadjinmouintro() {
-  var yulutxt = document.getElementById("maincontent");
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      yulutxt.innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/Christina.txt", true);
-  xhttp.send();
-};
-
-function loadrcintro() {
-  var yulutxt = document.getElementById("maincontent");
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      yulutxt.innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/Ricecake.txt", true);
-  xhttp.send();
-};
-
-function loaddragonintro() {
-  var yulutxt = document.getElementById("maincontent");
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      yulutxt.innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/Dragon.txt", true);
-  xhttp.send();
-};
-
-function loadbaobaointro() {
-  var yulutxt = document.getElementById("maincontent");
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      yulutxt.innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/Baobao.txt", true);
-  xhttp.send();
-};
-
-//成员简介到这里结束
-
-
-//合作单位简介从这里开始
-
-function loadnegaintro() {
-  var yulutxt = document.getElementById("maincontent");
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      yulutxt.innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "https://raw.githubusercontent.com/sftsfa/sftsfa.github.io/master/text/NegaNebulas.txt", true);
-  xhttp.send();
-};
-
-//合作单位简介到这里结束
 
 function clearmaincontent(){
  var maintxt = document.getElementById("maincontent");
