@@ -114,6 +114,9 @@ display: none;
 
 
 #buton4{
+top: 14px;
+left: 7px;
+position: relative;
 display: none;
 }
 
@@ -248,6 +251,7 @@ Your browser does not support the HTML5 canvas tag.</canvas>
 <button id="buton1" onclick="loadgame()">play a game</button>
 <button id="buton2" onclick="loadText('News')">新闻</button>
 <button id="buton3" onclick="colorswitch()">Theme Change</button>
+<button id="buton4" onclick="window.open('./jzds/Random_Image.html')">Kirari Apps</button>
 <input id="input1" value = "pink"></input>
 </div>
 
@@ -322,6 +326,7 @@ function getdashboard(obj){
 var d1  = document.getElementById("buton1");
 var d2  = document.getElementById("buton2");
 var d3  = document.getElementById("buton3");
+var d4  = document.getElementById("buton4");
 var i1  = document.getElementById("input1");
  var id = setInterval(frame, 5);
  var pos = 0;
@@ -330,6 +335,7 @@ var i1  = document.getElementById("input1");
       d1.style.display = "inline";
       d2.style.display = "inline";
       d3.style.display = "inline";
+	  d4.style.display = "inline";
       i1.style.display = "inline";
       clearInterval(id);
       
@@ -344,10 +350,12 @@ function hidedashboard(obj){
 var d1  = document.getElementById("buton1");
 var d2  = document.getElementById("buton2");
 var d3  = document.getElementById("buton3");
+var d4  = document.getElementById("buton4");
 var i1  = document.getElementById("input1");
       d1.style.display = "none";
       d2.style.display = "none";
       d3.style.display = "none";
+	  d4.style.display = "none";
       i1.style.display = "none";
  var id = setInterval(frame, 5);
   var pos = 700;
