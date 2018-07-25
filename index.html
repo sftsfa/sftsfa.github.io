@@ -322,6 +322,8 @@ window.onbeforeunload = function () {
   window.scrollTo(0,0);
 };
 
+toMaincontent();
+
 function getdashboard(obj){
 var d1  = document.getElementById("buton1");
 var d2  = document.getElementById("buton2");
@@ -485,6 +487,7 @@ function cleargame(){
  var maintxt = document.getElementById("maincontent");
 maintxt.innerHTML = "&nbsp";
 score = 0;
+toMaincontent();
 };
 
 function gethighscore(){
